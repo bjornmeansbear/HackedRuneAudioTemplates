@@ -3,13 +3,18 @@
     <!-- PLAYBACK PANEL -->
     <div id="playback" class="tab-pane active">
         <div class="container-fluid">
-			<span id="currentartist"><i class="fa fa-spinner fa-spin"></i></span>
+
+
+  <span id="currentartist"><i class="fa fa-spinner fa-spin"></i></span>
             <span id="currentsong"><i class="fa fa-spinner fa-spin"></i></span>
             <span id="currentalbum"><i class="fa fa-spinner fa-spin"></i></span>
-			<div id="overlay-playsource-open" title="View and change playback source" <?php if ($this->spotify === '0'): ?>class="disabled"<?php endif; ?>>
-				<span id="playlist-position"><button class="btn btn-default btn-xs">MPD</button><span></span></span>
-				<span id="format-bitrate"><i class="fa fa-spinner fa-spin"></i></span>
-			</div>
+  <div id="overlay-playsource-open" title="View and change playback source" <?php if ($this->spotify === '0'): ?>class="disabled"<?php endif; ?>>
+  <span id="playlist-position"><button class="btn btn-default btn-xs">MPD</button><span></span></span>
+  <span id="format-bitrate"><i class="fa fa-spinner fa-spin"></i></span>
+  </div>
+
+
+
             <div class="knobs row">
                 <div id="time-knob" class="col-sm-<?=$this->colspan ?>">
                     <input id="time" value="0" data-width="230" data-height="230" data-bgColor="#34495E" data-fgcolor="#0095D8" data-thickness="0.30" data-min="0" data-max="1000" data-displayInput="false" data-displayPrevious="true">
@@ -22,6 +27,9 @@
                         <!--<button type="button" id="consume" class="btn btn-default btn-lg btn-cmd btn-toggle" title="Consume Mode" data-cmd="consume"><i class="fa fa-compress"></i></button>-->
                     </div>
                 </div>
+
+
+
                 <?php if ($this->coverart == 1): ?>
                 <div class="col-sm-<?=$this->colspan ?> coverart">
                     <img id="cover-art" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="transparent-square">
@@ -29,6 +37,9 @@
                     <!--<a href="#" id="overlay-playsource-open" class="btn btn-default" title="Play source">MPD</a>-->
                 </div>
                 <?php endif ?>
+
+
+
                 <div id="volume-knob" class="col-sm-<?=$this->colspan ?> <?=$this->volume['divclass'] ?>">
                     <input id="volume" value="100" data-width="230" data-height="230" data-bgColor="#f00" data-thickness=".25" data-skin="tron" data-cursor="true" data-angleArc="250" data-angleOffset="-125" data-readOnly="<?=$this->volume['readonly'] ?>" data-fgColor="<?=$this->volume['color'] ?>" data-dynamic="<?=$this->volume['dynamic'] ?>" <?php if (isset($this->volume['disabled'])): ?> disabled="disabled" <?php endif ?>>
                     <div class="btn-group">
@@ -40,6 +51,10 @@
             </div>
         </div>
     </div>
+
+
+
+
     <!-- LIBRARY PANEL -->
     <div id="panel-sx" class="tab-pane">
         <div class="btnlist btnlist-top">
@@ -78,6 +93,10 @@
         </div>
         <div id="spinner-db" class="csspinner duo hide"></div>
     </div>
+
+
+
+
     <!-- QUEUE PANEL -->
     <div id="panel-dx" class="tab-pane">
         <div class="btnlist btnlist-top">
@@ -136,6 +155,22 @@
         <div id="spinner-pl" class="csspinner duo hide"></div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- extra stuff that I don't know what its for... -->
 <div id="context-menus">
     <div id="context-menu" class="context-menu">
         <ul class="dropdown-menu" role="menu">
@@ -162,14 +197,14 @@
             <li><a href="javascript:;" data-cmd="wrsave"><i class="fa fa-microphone sx"></i> Save in My Webradios</a></li>
         </ul>
     </div>
-	<div id="context-menu-spotify-pl" class="context-menu">
+  <div id="context-menu-spotify-pl" class="context-menu">
         <ul class="dropdown-menu" role="menu">
             <li><a href="javascript:;" data-cmd="spadd" data-type="spotify-playlist"><i class="fa fa-plus-circle sx"></i> Add</a></li>
             <li><a href="javascript:;" data-cmd="spaddplay" data-type="spotify-playlist"><i class="fa fa-play sx"></i> Add and play</a></li>
             <li><a href="javascript:;" data-cmd="spaddreplaceplay" data-type="spotify-playlist"><i class="fa fa-share-square-o sx"></i> Add, replace and play</a></li>
         </ul>
     </div>
-	<div id="context-menu-spotify" class="context-menu">
+  <div id="context-menu-spotify" class="context-menu">
         <ul class="dropdown-menu" role="menu">
             <li><a href="javascript:;" data-cmd="spadd" data-type="spotify-track"><i class="fa fa-plus-circle sx"></i> Add</a></li>
             <li><a href="javascript:;" data-cmd="spaddplay" data-type="spotify-track"><i class="fa fa-play sx"></i> Add and play</a></li>
@@ -332,10 +367,10 @@
     <nav>
         <ul>
             <li><span>Playback source</span></li>
-			<li><a href="javascript:;" id="playsource-mpd" class="btn btn-default btn-lg btn-block" title="Switch to MPD"><i class="fa fa-linux sx"></i> MPD</a></li>
-			<li><a href="javascript:;" id="playsource-spotify" class="btn btn-default btn-lg btn-block inactive" title="Switch to Spotify"><i class="fa fa-spotify sx"></i> <span>spop</span> Spotify</a></li>
-			<li><a href="javascript:;" id="playsource-airplay" class="btn btn-default btn-lg btn-block inactive"><i class="fa fa-apple sx"></i> <span>ShairPort</span> Airplay</a></li>
-			<li><a href="javascript:;" id="playsource-dlna" class="btn btn-default btn-lg btn-block inactive"><i class="fa fa-puzzle-piece sx"></i> <span>upmpdcli</span> DLNA</a></li>
+  <li><a href="javascript:;" id="playsource-mpd" class="btn btn-default btn-lg btn-block" title="Switch to MPD"><i class="fa fa-linux sx"></i> MPD</a></li>
+  <li><a href="javascript:;" id="playsource-spotify" class="btn btn-default btn-lg btn-block inactive" title="Switch to Spotify"><i class="fa fa-spotify sx"></i> <span>spop</span> Spotify</a></li>
+  <li><a href="javascript:;" id="playsource-airplay" class="btn btn-default btn-lg btn-block inactive"><i class="fa fa-apple sx"></i> <span>ShairPort</span> Airplay</a></li>
+  <li><a href="javascript:;" id="playsource-dlna" class="btn btn-default btn-lg btn-block inactive"><i class="fa fa-puzzle-piece sx"></i> <span>upmpdcli</span> DLNA</a></li>
             <li><button id="overlay-playsource-close" class="btn btn-link" type="button"><i class="fa fa-times"></i> close this layer</button></li>
         </ul>
     </nav>
