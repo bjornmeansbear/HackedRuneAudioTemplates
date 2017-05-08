@@ -1,0 +1,401 @@
+/** kb CSS modules, and demo player CSS **/
+@import url(https://codepen.io/bjornmeansbear/pen/yMqYxe.css)
+@import url(https://codepen.io/bjornmeansbear/pen/OmbmoW.css)
+
+/** oh shoot, no good? **/
+  
+* {
+  box-sizing: border-box;
+}
+
+.hideForNow {
+  display: none !important;
+}
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+
+#cover-art {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+#playback {
+  padding-top:0;
+}
+
+#playback .playback-controls {
+  position: relative;
+  width: auto;
+}
+
+flex, panel {
+  display:flex;
+}
+flex {
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+flex .topMatter {
+  width: 50%;
+}
+
+flex .col-sm-12 {
+  float: none;
+  padding: 0;
+}
+
+.covers,
+.coverart {
+  width: 100%;
+  /**/
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.covers .coverart img,
+img#cover-art {
+  max-width: none;
+}
+
+.trackInfo {
+  top: 0;
+  bottom: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+panel {
+  flex-direction: column;
+  width: 50%;
+}
+panel .controlPanel {
+  height: 25vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+panel #playlist {
+  height: 75vh;
+  overflow: scroll;
+  width: 100%;
+  padding:0;
+}
+
+/***** hide top menu! ******/
+#menu-top {
+  position: static !important;
+  height:0;
+  overflow: visible;
+}
+
+#menu-top .dropdown {
+  position: fixed;
+  left: 0;
+  top:0;
+  margin: 0;
+  padding: 0 1em;
+  background: rgba(096,103,103,1);
+  color: rgba(197,192,101,1);
+  z-index: 9999;
+}
+
+#menu-top .dropdown-menu {
+  left: 0;
+  right: initial;
+}
+
+#menu-top a {
+  color: rgba(197,192,101,1);
+}
+
+#menu-top .playback-controls,
+#menu-top .home {
+  display:none !important;
+}
+
+#menu-top .dropdown #menu-settings {
+  margin: 0;
+}
+
+#menu-bottom a {
+  width: 50%;
+}
+
+#menu-bottom li:last-child {
+  display:none;
+}
+
+queue .btnlist, queue .btnlist-top, queue.btnlist-bottom {
+  position: static;
+}
+
+/**** start styling up song titles, etc. ****/
+#currentsong,
+.songTitle,
+#currentalbum,
+.albumTitle,
+#currentartist,
+.artist {
+  font-size: 20px;
+  background-color: rgba(096,103,103,1);
+  color: rgba(197,192,101,1);
+  margin:0;
+  margin-bottom: .5rem;
+  padding-left: .25em;
+  padding-right: .25em;
+  width: inherit;
+  box-shadow: 0 0 .666666rem 0 rgba(047, 041, 038, .5);
+}
+
+#currentsong,
+.songTitle {
+  font-size: 2em;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 400;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.hide {
+  display: none;
+}
+.full {
+  width: calc(100%);
+}
+.half {
+  width: calc(50%);
+}
+.third {
+  width: calc(33.33333333%);
+}
+.quarter {
+  width: calc(25%);
+}
+flex {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+flex,
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+cover {
+  display: block;
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+art {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  box-shadow: inset 0 0 2em rgba(47, 41, 38, 0.5);
+}
+art img {
+  width: auto;
+  height: 100%;
+  z-index: -1;
+  position: relative;
+}
+@media screen and (min-aspect-ratio: 2/1) {
+  art img {
+    width: 100%;
+    height: auto;
+  }
+}
+info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 2em;
+}
+info h1,
+info h2 {
+  margin: 0;
+}
+info li {
+  margin-bottom: .5rem;
+}
+.p0p25 {
+  padding: 0 .25rem;
+}
+.pt1 {
+  padding-top: 1rem;
+}
+info span {
+  box-shadow: 0 0 0.666666rem 0 rgba(47, 41, 38, 0.5);
+}
+panel {
+  width: 50%;
+  height: 100%;
+}
+panelTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 25%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.controls {
+  min-height: 3rem;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.controls.playback {
+  min-height: 5rem;
+}
+.controls .fa {
+  font-size: 1.5rem;
+}
+.controls.playback .fa {
+  font-size: 2.5rem;
+}
+.controls.playback .fa-play,
+.controls.playback .fa-pause {
+  font-size: 4rem;
+}
+.control button {
+  width: 100%;
+  background: transparent;
+  border: 0px solid transparent;
+  cursor: pointer;
+}
+.single {
+  position: relative;
+}
+.single::after {
+  content: '1';
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 900;
+  font-size: .6rem;
+  position: relative;
+  line-height: 1;
+  left: -0.2rem;
+  top: -0.23rem;
+}
+button.active {
+  color: white;
+  background-color: black;
+}
+queue {
+  display: block;
+  height: 75%;
+  overflow-y: scroll;
+}
+input[type=range] {
+  width: 100%;
+  height: 1rem;
+  margin: 0;
+  padding: 0;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  height: 1rem;
+  background: lightgray;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background: cyan;
+  margin-top: -6px;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: darkgray;
+}
+.inputWrapper {
+  position: relative;
+}
+.inputWrapper * {
+  position: absolute;
+}
+.inputWrapper .fa {
+  z-index: 9;
+  color: white;
+}
+.inputWrapper .fa:first-child {
+  left: 3px;
+}
+.inputWrapper .fa:last-child {
+  right: 3px;
+}
+.indicator {
+  background-color: red;
+  width: 0;
+  height: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999999;
+}
